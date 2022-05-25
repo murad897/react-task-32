@@ -9,6 +9,9 @@ const Popup = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const FormSUbmit = (e) => {
+    e.preventDefault();
+  };
   const style = {
     position: "absolute",
     top: "50%",
@@ -31,7 +34,7 @@ const Popup = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <form className="popup-model">
+          <form className="popup-model" onSubmit={FormSUbmit}>
             <div className="popup-model-item">
               <label for="fimage">Image</label>
               <input type="text" name="fimage" placeholder="HTTP LINK...." />
@@ -49,9 +52,16 @@ const Popup = () => {
               <input type="text" name="fproduct" placeholder="product...." />
             </div>
             <div className="popup-model-item">
-              <label for="fname">First Name</label>
-              <input type="text" name="fname" placeholder="HTTP LINK...." />
+              <label for="fmanifactuler">Manifactuler</label>
+              <input
+                type="text"
+                name="fmanifactuler"
+                placeholder="Manifactuler...."
+              />
             </div>
+            <Button variant="contained" onClick={FormSUbmit}>
+              Contained
+            </Button>
           </form>
         </Box>
       </Modal>
